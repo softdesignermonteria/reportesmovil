@@ -21,7 +21,7 @@ $.datepicker.regional['es'] =
 $.datepicker.setDefaults($.datepicker.regional['es']);
  
 //$.mobile.page.prototype.options.domCache = true;
-url_master = "http://107.170.28.129/ReportesMovil/";
+url_master = "http://reportesmovil.dydsoluciones.net/";
 //url_master = "";
  
 /*$("#errorMsg").hide();*/
