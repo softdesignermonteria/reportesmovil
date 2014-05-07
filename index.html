@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facturación Movil</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <link rel="stylesheet" type="text/css" href="js/themes/mitema.min.css">
+    <link rel="stylesheet" type="text/css" href="js/themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery.mobile.custom.structure.min.css">
+
+    <link href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css" rel="stylesheet">
+    <script src="js/jquery-1.11.0.min.js"></script>
+   	<script src="js/jquery.mobile.custom.min.js"></script>
+  	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+   
+    <script src="https://rawgithub.com/jquery/jquery-ui/1.10.4/ui/jquery.ui.datepicker.js"></script>
+    <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js" id="mobile-datepicker"></script>
+    
+ 	<script src="js/login.js"></script>
+    
+</head>
+<body>
+	<section id="login" data-role="page">
+		<header data-role="header">
+			<h1>Inicio de Sesión</h1>
+		</header>
+		<article data-role="content">
+			<form id="form_login">
+		        <div data-role="fieldcontain" class="ui-hide-label">
+		        	<label for="txtuser">Usuario:</label>
+		            <input type="text" name="txtuser" id="txtuser" value="" placeholder="Nombre" />
+		        </div>
+		        <div data-role="fieldcontain" class="ui-hide-label">
+		        	<label for="txtpassword">Contraseña:</label>
+		            <input type="password" name="txtpassword" id="txtpassword" value="" placeholder="Clave" />
+		        </div>
+		        <input type="button" value="Iniciar Sesion" id="btnLogin">
+		    </form>
+		     <!--<div id="errorMsg" style="background-color:red;color: #FFFFFF;">Usuario o Contraseña no valida</div>-->
+		</article>
+	</section>
+	<!-- Aqui nuestro dialog con el mensaje de error  -->
+	<section id="pageError" data-role="dialog">
+		<header data-role="header">
+			<h1>Error</h1>
+		</header>
+		<article data-role="content">
+			<p>Usuario o contraseña no valida</p>
+			<a href="#" data-role="button" data-rel="back">Aceptar</a>
+		</article>
+	</section>
+
+   	
+	<div data-role="page" id="Menu">
+
+        <div data-role="header">
+            <h1>Listado de Reportes</h1>
+        </div>
+        <div data-role="content">	
+            <ul data-role="listview">
+                <li><a href="#page2">Inventario General</a></li>
+                <li><a href="#page3">Listado de Clientes</a></li>
+                <li><a href="#page4">Listado Proveedores</a></li>
+                <li><a href="#page5">Top Clientes del Mes</a></li>
+                <li><a href="#page6">Top Referencia del Mes</a></li>
+                <li><a href="#page7">Ingresos Diarios</a></li>
+            </ul>		
+        </div>
+        <a href="#login" data-role="button"> Cerrar Session </a> 
+        <div data-role="footer">
+            <h4>Listado de Reportes Factutesis</h4>
+        </div>
+    </div>
+
+	<div data-role="page" id="page2">
+	 
+         <div data-role="header">
+            <h1>Inventario general</h1>
+         </div>
+         
+         <div data-role="content">	
+            <div id="div_page2"></div>
+            <a href="#Menu" data-role="button"> Regresar </a> 
+         </div>
+         
+         <div data-role="footer">
+           <h4>Inventario general</h4>
+         </div>
+     
+    </div>
+
+    <div data-role="page" id="page3">
+        
+        <div data-role="header">
+            <h1>Listado de Clientes</h1>
+        </div>
+        
+        <div data-role="content">	
+            <div id="div_page3"></div>
+            <a href="#Menu" data-role="button"> Regresar </a> 
+        </div>
+     
+        <div data-role="footer">
+            <h4>Listado de Clientes</h4>
+        </div>
+    </div>
+
+	<div data-role="page" id="page4">
+        
+        <div data-role="header">
+            <h1>Listado Proveedores</h1>
+        </div>
+        
+        <div data-role="content">	
+            <div id="div_page4"></div>
+            <a href="#Menu" data-role="button"> Regresar </a> 
+        </div>
+       
+        <div data-role="footer">
+            <h4>Listado Proveedores</h4>
+        </div>
+    </div>
+    
+<div data-role="page" id="page5">
+    
+    <div data-role="header">
+        <h1>Top Clientes del Mes</h1>
+    </div>
+    
+    <div data-role="content">	
+        <div id="div_page5">
+                 
+                  <form method="post">
+                    <table width="100%" border="0">
+                      <tr>
+                        <td>Ingrese fecha</td>
+                        <td><input type="text" name="fecha" id="fecha" data-role="date" /></td>
+                        <td rowspan="2"><input type="submit" value="Buscar" id="search_button" /></td>
+                      </tr>
+                      <tr>
+                        <td>Ingrese número de registros a visualizar</td>
+                        <td><input type="text" name="limite" id="limite" data-role="date" /></td>
+                      </tr>
+                    </table>
+                     
+                    <div id="searchresults">Resultado de la Búsqueda:</div>
+                    <div id="results"></div>
+                </form>
+                
+        </div>
+        <a href="#Menu" data-role="button"> Regresar </a> 
+    </div>
+ 
+    <div data-role="footer">
+        <h4>Top Clientes del Mes</h4>
+    </div>
+    
+</div>
+    
+    <div data-role="page" id="page6">
+        
+        <div data-role="header">
+            <h1>Top Referencia del Mes</h1>
+        </div>
+        
+        <div data-role="content">	
+            <div id="div_page6">
+                <form method="post">
+                <table width="100%" border="0">
+                  <tr>
+                    <td>Ingrese fecha Inicial</td>
+                    <td><input type="text" name="fecha_i" id="fecha_i" data-role="date"   /></td>
+                    <td rowspan="2"><input type="button" value="Buscar" id="search_button2" /></td>
+                  </tr>
+                  <tr>
+                    <td>Ingrese fecha Final</td>
+                    <td><input type="text" name="fecha_f" id="fecha_f" data-role="date"   /></td>
+                  </tr>
+                </table>
+                 
+                <div id="searchresults">Resultado de la Búsqueda:</div>
+                <div id="results2"></div>
+                </form>
+             </div>
+            <a href="#Menu" data-role="button"> Regresar </a> 
+        </div>
+    
+        <div data-role="footer">
+            <h4>Top Referencia del Mes</h4>
+        </div>
+</div>
+    
+    <div data-role="page" id="page7">
+        
+        <div data-role="header">
+            <h1>Ingresos Diarios</h1>
+        </div>
+        
+        <div data-role="content">	
+            <div id="div_page7">
+            	<form method="post">
+                    <table width="100%" border="0">
+                      <tr>
+                        <td>Ingrese fecha</td>
+                        <td><input type="text" name="fecha1" id="fecha1" data-role="date"   /></td>
+                        <td><input type="submit" value="Buscar" id="search_button1" /></td>
+                      </tr>
+                    </table>
+               	 	<div id="searchresults1">Resultado de la Búsqueda:</div>
+                	<div id="results1"></div>
+                 </form>
+            </div>
+            <a href="#Menu" data-role="button"> Regresar </a> 
+         </div>
+        <div data-role="footer">
+            <h4>Ingresos Diarios</h4>
+        </div>
+</div>
+   
+</body>
+</html>
